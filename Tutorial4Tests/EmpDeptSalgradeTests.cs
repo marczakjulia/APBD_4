@@ -1,5 +1,4 @@
 ﻿using Tutorial3.Models;
-//hi sir, hope you enjoy it. def an amazing friday night for me 
 
 public class EmpDeptSalgradeTests
 {
@@ -87,10 +86,9 @@ public class EmpDeptSalgradeTests
     public void ShouldReturnEmployeesWithCommission()
     {
         var emps = Database.GetEmps();
-        var result = emps
-            .Where(e => e.Comm != null)
+        var result = emps.Where(e => e.Comm != null)
             .Select(e => new { EName = e.EName, Comm = e.Comm });
-      //  Assert.All(result, r => Assert.NotNull(r.Comm));
+        Assert.All(result, r => Assert.NotNull(r.Comm));
     }
 
     // 8. Join with Salgrade
